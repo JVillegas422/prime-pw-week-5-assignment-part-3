@@ -64,3 +64,24 @@ console.log(findByArtist('VHS or Beta'));
 // Result = [], empty array since
 // artist is not listed in collection
 console.log(findByArtist('Architects'));
+
+// Stretch Goals
+
+// function takes two parameter, loops
+// & adds object, must match all criteria.
+function search( artist, year ) {
+    let results = [];
+
+    for(let album of collection) {
+        if (artist === album.artist && year === album.yearPublished) {
+            results.push(album);
+        }
+    }
+    return results;
+}
+// Testing
+console.log(search('Lana Del Ray', '2014'));
+// result: {title: 'Ultraviolence', artist: 'Lana Del Ray', yearPublished: '2014'}
+console.log(search('Lana Del Ray', '2016'));
+// Result = [], empty array since parameters
+// do not match all criteria.
