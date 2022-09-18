@@ -43,3 +43,24 @@ The Foundations of Decay by My Chemical Romance, published in 2022.
 etc..
 */
 
+// function takes artist as parameter, loops
+// & adds object, will return if match found.
+function findByArtist( artist ) {
+    let results = [];
+
+    for(let album of collection) {
+        if (artist === album.artist) {
+            results.push(artist);
+        }
+    }
+    return results;
+}
+
+// Testing findByArtist function
+// Result = ['Polyphia']
+console.log(findByArtist('Polyphia'));
+// Result = ['VHS or Beta']
+console.log(findByArtist('VHS or Beta'));
+// Result = [], empty array since
+// artist is not listed in collection
+console.log(findByArtist('Architects'));
